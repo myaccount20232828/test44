@@ -1,0 +1,13 @@
+name: Test
+on:
+  push:
+jobs:
+  Test:
+    name: Test
+    runs-on: macos-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Test
+        run: |
+             pkg-config --cflags libcrypto
