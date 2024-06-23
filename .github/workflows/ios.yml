@@ -9,5 +9,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Test
-        run: |
-             pkg-config --cflags libcrypto
+        run: pkg-config --cflags libcrypto
+      - name: Upload 
+        uses: actions/upload-artifact@v3
+        with:
+          name: libcrypto inlcude
+          path: /opt/homebrew/Cellar/openssl@3/3.3.1/include
